@@ -1,32 +1,43 @@
-import { Nombre } from "./ui/nombre";
-import {Marquee} from "./ui/Marquee";
-import { Tecnologias1, Tecnologias2 } from "./Tecnologias";
-import { FloatingDockDemo } from "./Menu";
-import { Background } from "./Background";
-import { BackgroundBeamsWithCollision } from "./ui/BackgroundBeamsWithCollision";
 import { Titulo } from "./Titulo";
 import { TabsTransitionPanel } from "./TecnologiasContainer";
+import { Texto } from "./ui/Texto";
 
 
 export const Home = () =>{
     return(
-        <div className="">
-            <div className="fixed inset-0 -z-10">
-            <BackgroundBeamsWithCollision/>
+        <div >
+            <div className="flex fixed inset-0 -z-10">
+                <div className="bg-indigo-500 w-2/3 h-screen"></div>
+                <div className="bg-amber-50 w-1/3 h-screen"></div>
             </div>
+
+            
+           
 
             <Titulo/>
 
-            <h2 className="text-white ">Skills</h2>
+            
+
+            <div className="flex">
+                <Texto/>
+
+                <div className="w-1/3">
+                <img src="./Images/Foto.png" alt="" />
+
+
+                </div>
+                    
+            </div>
+
+            <h2 className="font-2xl ">Skills</h2>
             <div className="flex w-1/2">
                 <TabsTransitionPanel/>
             </div>
             
 
-            <FloatingDockDemo/>
             
 
-            <p>I specialize in transforming ideas into innovative and efficient digital solutions. I stand out for my ability to solve problems and quickly adapt to change, which ensures the creation of efficient, creative, and high-quality projects. My professional goal is focused on transforming processes through technology.</p>
+
        
             
  

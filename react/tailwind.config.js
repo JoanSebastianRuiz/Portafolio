@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       keyframes: {
-         "marquee-x": {
+        "marquee-x": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
         },
@@ -19,9 +16,13 @@ export default {
       animation: {
         "marquee-horizontal": "marquee-x var(--duration) infinite linear",
         "marquee-vertical": "marquee-y var(--duration) linear infinite",
-        },
+      },
+      fontFamily: {
+        signika: ['Signika', 'sans-serif'],
+        mosk: ['Mosk', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
+      },
     },
   },
   plugins: [],
-}
-
+};
