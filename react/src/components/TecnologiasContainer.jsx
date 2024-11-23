@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { TransitionPanel } from './ui/TransitionPanel';
+import { TransitionPanel } from '../ui/TransitionPanel';
 import { TecnologiasBack, TecnologiasFront, TecnologiasLearning, TecnologiasTools, TecnologiasMobile } from './Tecnologias';
 
 export function TabsTransitionPanel() {
@@ -41,17 +41,17 @@ export function TabsTransitionPanel() {
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`rounded-md px-3 py-1 text-sm font-medium ${
+            className={`rounded-xl px-3 py-1 font-mosk500 ${
               activeIndex === index
-                ? 'bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100'
-                : 'bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400'
+                ? 'bg-amber-50  text-gray-800'
+                : 'bg-gray-800 text-amber-50'
             }`}
           >
             {item.title}
           </button>
         ))}
       </div>
-      <div className='overflow-hidden border-t border-zinc-200 dark:border-zinc-700'>
+      <div className='overflow-hidden border-t-2 border-gray-800 '>
         <TransitionPanel
           activeIndex={activeIndex}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
@@ -63,7 +63,7 @@ export function TabsTransitionPanel() {
         >
           {ITEMS.map((item, index) => (
             <div key={index} className='py-2'>
-              <p className='text-zinc-600 dark:text-zinc-400'>{item.content}</p>
+              <div>{item.content}</div>
             </div>
           ))}
         </TransitionPanel>
