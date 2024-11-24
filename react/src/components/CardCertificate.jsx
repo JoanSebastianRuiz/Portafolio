@@ -1,26 +1,93 @@
-export const CardCertificate = () =>{
-    return(
-            <div class="group relative w-80 h-96 bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition duration-300">
-    <div class="absolute inset-0 flex flex-col items-center justify-center p-5 text-white text-center backface-hidden group-hover:rotate-y-180 group-hover:opacity-0">
-        <svg class="w-16 h-16 mb-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="..."/></svg>
-        <h2 class="text-xl font-semibold">Certificados Profesionales</h2>
-        <p class="mt-2">Haz clic para explorar</p>
-    </div>
+import {motion} from "framer-motion";
+import { useState } from "react";
 
-    <div class="absolute inset-0 flex flex-col items-center justify-center p-5 bg-gray-900 text-white text-center transform rotate-y-180 opacity-0 group-hover:opacity-100 group-hover:rotate-y-0">
-        <ul class="space-y-2">
-        <li>
-            <h3 class="font-semibold">Certificado en React</h3>
-            <p class="text-sm">Institución: XYZ</p>
-        </li>
-        <li>
-            <h3 class="font-semibold">Certificado en Node.js</h3>
-            <p class="text-sm">Institución: ABC</p>
-        </li>
-        </ul>
-        <a href="#" class="mt-4 bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded">Ver todos</a>
-    </div>
-    </div>
-
+export const CardCertificate = ({ name, place, duration, date, logo }) => {
+    return (
+      <div className="bg-amber-50 shadow-lg rounded-lg p-6 border border-gray-200 w-2/5">
+        {logo && (
+          <div className="flex justify-center mb-4">
+            <img
+              src={logo}
+              alt={`${name} logo`}
+              className="h-16 w-16 object-contain"
+            />
+          </div>
+        )}
+  
+        {/* Title */}
+        <h1 className="text-lg font-bold text-gray-800 text-center">{name}</h1>
+  
+        {/* Place */}
+        {place && <p className="text-sm text-gray-500 text-center">{place}</p>}
+  
+        <div className="flex justify-between items-center mt-4">
+          <p className="text-sm text-gray-600">{duration}</p>
+          <p className="text-sm text-gray-600">{date}</p>
+        </div>
+      </div>
     );
-}
+  };
+
+
+export const MainCertificate = ({ name, place, start, end, logo, title, description }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleFlip = () =>{
+    if(!isAnimating){
+      setIsFlipped(!isFlipped);
+      setIsAnimating(true);
+    }
+  }
+
+return (
+    <div className="h-96 w-1/5 cursor-pointer">
+      <div className="flip-card w-full h-full" onClick={handleFlip}>
+        <motion.div
+        className="flip-card-inner w-full h-full"
+        initial={false}
+        animate={{rotateY: isFlipped?180:0}}
+        transition={{duration:0.6, animationDirection: "normal"}}
+        onAnimationComplete={()=>setIsAnimating(false)}>
+
+          <div className="flip-card-front w-full h-full bg-amber-50 p-6 rounded-xl border-gray-200 border shadow-lg flex items-center flex-col justify-center">
+            {logo && (
+                <div className="flex justify-center mb-4">
+                <img
+                    src={logo}
+                    alt={`${name} logo`}
+                    className="w-auto h-32 rounded-xl"
+                />
+                </div>
+            )}
+
+            <h1 className="text-lg font-bold text-gray-800 text-center">{name}</h1>
+
+            {place && <p className="text-sm text-gray-500 text-center">{place}</p>}
+
+            {title && <p className="text-sm text-gray-500 text-center">{title}</p>}
+
+            <div className="w-1/2 h-1 bg-gray-400 rounded-full mx-auto my-4"></div>
+
+            <div className="flex gap-x-20 justify-evenly mt-4">
+                <p className="text-sm text-gray-600">{start}</p>
+                <p className="text-sm text-gray-600">{end}</p>
+            </div>
+
+            
+          </div>
+
+          <div className="flip-card-back w-full h-full bg-amber-50 p-6 rounded-xl border-gray-200 border shadow-lg">
+            <p className="text-justify">{description}</p>
+          </div>
+        </motion.div>
+      </div>
+      
+    
+    </div>
+);
+};
+
+
+
+  

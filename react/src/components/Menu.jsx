@@ -14,8 +14,8 @@ export const Menu = () => (
         url:"/projects"
       },
       {
-        name: 'Certificates',
-        url:"/certificates"
+        name: 'Education',
+        url:"/education"
       },
       {
         name: 'Contact',

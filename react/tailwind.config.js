@@ -27,7 +27,8 @@ export default {
         mosk700: ['Mosk700', 'sans-serif'],
         mosk900: ['Mosk800', 'sans-serif'],
         mosk900: ['Mosk900', 'sans-serif'],
-        leckerli: ['Leckerli One', 'sans-serif']
+        leckerli: ['Leckerli One', 'sans-serif'],
+        galada: ['Galada', 'sans-serif']
       },
     },
   },
