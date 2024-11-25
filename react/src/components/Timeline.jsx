@@ -191,10 +191,10 @@ const TextBoxLeft = ({year: year2, certificates})=>{
     return(
         <div id="container" className="px-8 py-4 w-full relative
         md:w-1/2  ">
-            <h3 className="absolute bg-indigo-100 rounded-[20px] z-10 -top-0 p-1 left-0 -translate-x-6 
-            md:left-full md:-translate-x-4">{year2}</h3>
+            <h3 className="absolute font-galada text-gray-800 bg-indigo-100 rounded-[20px] z-10 -top-0 p-2 left-0 -translate-x-7 
+            md:left-full md:-translate-x-5">{year2}</h3>
             
-            <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-72">
+            <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-64">
                 {elementosFiltrados.map(({name,duration, place, date, logo})=>{
                     return(
                         <CardCertificate
@@ -219,9 +219,9 @@ const TextBoxRight = ({year: year2, certificates})=>{
     return(
         <div id="container" className="px-8 py-4 relative w-full  left-0
         md:w-1/2 md:left-1/2 md:ml-2">
-            <h3 className="absolute bg-indigo-100 rounded-[20px] z-10 -top-0 p-1 left-0 -translate-x-6 
-            md:left-0 md:-translate-x-6">{year2}</h3>
-            <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-72 ">
+            <h3 className="absolute font-galada text-gray-800 bg-indigo-100 rounded-[20px] z-10 -top-0 p-2 left-0 -translate-x-7 
+            md:left-0 md:-translate-x-7">{year2}</h3>
+            <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-64 ">
 
             {elementosFiltrados.map(({name,duration, place, date, logo})=>{
                     return(

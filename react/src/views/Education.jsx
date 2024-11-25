@@ -36,7 +36,7 @@ export const Education = () =>{
     return(
         <div className="bg-indigo-500 min-h-screen relative pt-20 pb-10">
             <h2 className="font-galada text-6xl text-amber-50 text-center mb-6">Academic Background</h2>
-            <section className="flex flex-wrap gap-10 justify-center items-center mb-12">
+            <section className="flex flex-wrap gap-10 justify-center  mb-12 px-6">
                 {mainCertificates.map(({ name, place, start, end, logo, description, title },i)=>{
                     return(
                         <MainCertificate
