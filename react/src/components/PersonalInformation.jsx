@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin  } from '@fortawesome/free-brands-svg-icons';
 
-export const Contacto = () =>{
+export const PersonalInformation = () =>{
     
     return(
         <div className="flex w-full justify-center px-4 gap-x-4 mt-4">

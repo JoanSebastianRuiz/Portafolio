@@ -39,7 +39,7 @@ export const NavBar = ({ tabs }) => {
           id={`tab-${index}`}
           onClick={() => handleTabClick(index, url)}
           className={twMerge(
-            'transition-colors duration-200 flex items-center justify-center rounded-full p-3 sm:px-2 sm:py-2',
+            'transition-colors duration-200 flex items-center justify-center rounded-full  p-3 sm:px-2 sm:py-2',
             currentLink?.index === index && 'text-gray-800',
             !fired.current && index === currentLink?.index && 'dark:bg-white bg-neutral-950'
           )}

@@ -79,7 +79,7 @@ return (
 
           {/* Back */}
           <div className="flip-card-back w-full h-full bg-amber-50 p-6 rounded-xl border-gray-200 border shadow-lg">
-            <p className="text-justify font-mosk400 text-base">{description}</p>
+            <p className="text-justify font-mosk400 text-base text-gray-600">{description}</p>
           </div>
         </motion.div>
       </div>

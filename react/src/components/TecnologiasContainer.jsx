@@ -6,7 +6,7 @@ import { TecnologiasBack, TecnologiasFront, TecnologiasLearning, TecnologiasTool
 export function TabsTransitionPanel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const ITEMS = [
+  const items = [
     {
       title: 'Front',
       content:
@@ -37,7 +37,7 @@ export function TabsTransitionPanel() {
   return (
     <div>
       <div className='mb-4 flex flex-wrap gap-4 justify-center'>
-        {ITEMS.map((item, index) => (
+        {items.map((item, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
@@ -61,7 +61,7 @@ export function TabsTransitionPanel() {
             exit: { opacity: 0, y: 50, filter: 'blur(4px)' },
           }}
         >
-          {ITEMS.map((item, index) => (
+          {items.map((item, index) => (
             <div key={index} className='p-4'>
               <div>{item.content}</div>
             </div>

@@ -3,25 +3,10 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { useMediaQuery } from '@mui/material';
 
 export const PortfolioInfo = () => {
-  const isMobile = useMediaQuery('(max-width:768px)');
+  const isLg = useMediaQuery('(min-width:1024px)');
   return(
     <>
-    {isMobile ? (
-      <div className='flex flex-col items-center my-10 mx-6 gap-8'>
-        <GoalCard 
-          name="🔮 Leading Digital Innovation" 
-          description="I aspire to be a recognized Full Stack leader, driving impactful projects that harness technology to transform businesses and lives."/>
-        
-        <GoalCard 
-          name="🤝 Collaboration for Success" 
-          description="I seek to contribute to multidisciplinary teams with my problem-solving and adaptability skills."/>
-        
-        <GoalCard 
-            name="🧠 Master New Tech" 
-            description="I focus on learning and mastering emerging technologies to deliver increasingly efficient, innovative, and high-quality solutions."/>
-
-      </div>
-    ) :(
+    {isLg ? (
       <div className="flex items-center mx-16 my-14">
 
         <div className="flex justify-center w-1/2">
@@ -44,6 +29,22 @@ export const PortfolioInfo = () => {
 
           </div>        
         </div>  
+      </div>
+      
+    ) :(
+      <div className='flex flex-col items-center my-10 mx-6 gap-8'>
+        <GoalCard 
+          name="🔮 Leading Digital Innovation" 
+          description="I aspire to be a recognized Full Stack leader, driving impactful projects that harness technology to transform businesses and lives."/>
+        
+        <GoalCard 
+          name="🤝 Collaboration for Success" 
+          description="I seek to contribute to multidisciplinary teams with my problem-solving and adaptability skills."/>
+        
+        <GoalCard 
+            name="🧠 Master New Tech" 
+            description="I focus on learning and mastering emerging technologies to deliver increasingly efficient, innovative, and high-quality solutions."/>
+
       </div>
 
     )}
