@@ -30,7 +30,7 @@ export const Home = () =>{
                     <h1 className="text-indigo-500 text-6xl text-center font-galada mt-10 text-arc">Hi, I am Joan!</h1>
 
                     <div className="flex justify-center relative">
-                        <img className="w-4/5" src="./Images/Foto.png" alt="Foto" />
+                        <img className="w-4/5" src="./Images/Me/Foto.png" alt="Foto" />
                     </div>
                     <Contacto/>
 

@@ -3,13 +3,13 @@ import { useState } from "react";
 
 export const CardCertificate = ({ name, place, duration, date, logo }) => {
     return (
-      <div className="bg-amber-50 shadow-lg rounded-lg p-6 border border-gray-200 w-2/5">
+      <div className="bg-amber-50 shadow-lg rounded-lg p-6 border border-gray-200 w-2/5 min-h-72 min-w-52 flex- flex-col content-center">
         {logo && (
           <div className="flex justify-center mb-4">
             <img
               src={logo}
               alt={`${name} logo`}
-              className="h-16 w-16 object-contain"
+              className="h-16 rounded-xl "
             />
           </div>
         )}
@@ -41,7 +41,7 @@ export const MainCertificate = ({ name, place, start, end, logo, title, descript
   }
 
 return (
-    <div className="h-96 w-1/5 cursor-pointer">
+    <div className="h-96 w-1/5 cursor-pointer min-w-[270px]">
       <div className="flip-card w-full h-full" onClick={handleFlip}>
         <motion.div
         className="flip-card-inner w-full h-full"
