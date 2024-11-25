@@ -195,9 +195,10 @@ const TextBoxLeft = ({year: year2, certificates})=>{
             md:left-full md:-translate-x-5">{year2}</h3>
             
             <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-64">
-                {elementosFiltrados.map(({name,duration, place, date, logo})=>{
+                {elementosFiltrados.map(({name,duration, place, date, logo}, i)=>{
                     return(
                         <CardCertificate
+                        key={i+1}
                         name={name}
                         duration={duration}
                         place={place}
@@ -223,9 +224,10 @@ const TextBoxRight = ({year: year2, certificates})=>{
             md:left-0 md:-translate-x-7">{year2}</h3>
             <div id="text-box" className="relative px-4 py-10 my-4 bg-indigo-100 rounded-xl flex flex-wrap gap-4 content-center justify-center min-w-64 ">
 
-            {elementosFiltrados.map(({name,duration, place, date, logo})=>{
+            {elementosFiltrados.map(({name,duration, place, date, logo}, i)=>{
                     return(
                         <CardCertificate
+                        key={i+1}
                         name={name}
                         duration={duration}
                         place={place}

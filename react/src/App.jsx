@@ -13,9 +13,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <div className='flex justify-center sm:justify-normal'>
         <div className="absolute z-30">
             <Menu/>
         </div>
+      </div>
+        
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/projects' element={<Projects/>}/>

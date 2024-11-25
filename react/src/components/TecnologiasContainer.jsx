@@ -36,12 +36,12 @@ export function TabsTransitionPanel() {
 
   return (
     <div>
-      <div className='mb-4 flex space-x-2'>
+      <div className='mb-4 flex flex-wrap gap-4 justify-center'>
         {ITEMS.map((item, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className={`rounded-xl px-3 py-1 font-mosk500 ${
+            className={`rounded-3xl px-3 py-1 font-mosk500 ${
               activeIndex === index
                 ? 'bg-amber-50  text-gray-800'
                 : 'bg-gray-800 text-amber-50'
@@ -51,7 +51,7 @@ export function TabsTransitionPanel() {
           </button>
         ))}
       </div>
-      <div className='overflow-hidden border-t-2 border-gray-800 '>
+      <div className='overflow-hidden border-t-[3px] border-gray-800 '>
         <TransitionPanel
           activeIndex={activeIndex}
           transition={{ duration: 0.2, ease: 'easeInOut' }}
@@ -62,7 +62,7 @@ export function TabsTransitionPanel() {
           }}
         >
           {ITEMS.map((item, index) => (
-            <div key={index} className='py-2'>
+            <div key={index} className='p-4'>
               <div>{item.content}</div>
             </div>
           ))}

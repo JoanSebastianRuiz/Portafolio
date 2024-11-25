@@ -4,61 +4,16 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useMediaQuery } from '@mui/material';
 
 export const BentoGrid = ({projects}) =>{
-    const isMobile = useMediaQuery('(max-width:768px)');
-    const isLg = useMediaQuery('(max-width:1024px)');
+    const isMobile = useMediaQuery('(min-width:768px)');
+    const isLg = useMediaQuery('(min-width:1024px)');
     return(
         <>
             {isMobile? (
-                <div className='pt-20 flex flex-col gap-10 px-10 pb-10 items-center'>
-                    {projects.map(({logo, name, description, repository, demo, technologies})=>{
-                    return(
-                        <MobileComponent
-                        logo={logo}
-                        name={name}
-                        description={description}
-                        repository={repository}
-                        demo={demo}
-                        technologies={technologies}
-                        />
-                    );
-                })}
-
-                </div>
-                
-            ) : (
                 <div className="h-screen w-full flex justify-center items-center pt-20 px-6 pb-6">
                     <div className="grid h-full w-full grid-cols-10 grid-rows-10 gap-4 ">
 
                         {/* Elemento 1 */}
                         {isLg? (
-                            <div className="col-span-6 row-span-5 bg-indigo-100 rounded-3xl flex gap-4 flex-col  p-10 justify-center xl:px-16">
-                                <div className='flex items-center justify-between'>
-                                    <h2 className='font-mosk700 md:text-xl lg:text-xl xl:text-3xl'>{projects[1].name}</h2>
-                                    <img className=' md:max-h-24 md:max-w-40 lg:max-h-24 lg:max-w-24 rounded-2xl' src={projects[1].logo} alt="Logo project 1" />
-                                </div>
-
-                                <p className='md:font-mosk400 lg:font-mosk500 md:text-base lg:text-base text-justify '>{projects[1].description}</p>
-
-                                <div className='flex justify-between'>
-                                    
-                                    <div className='flex items-center gap-2'>
-                                        <FontAwesomeIcon className='md:text-3xl cursor-pointer' icon={faGithub} onClick={()=>window.open(projects[1].repository,"_blank")} />
-
-                                        {projects[1].demo && <FontAwesomeIcon className='md:text-3xl cursor-pointer' icon={faEye} onClick={()=>window.open(projects[1].demo,"_blank")} />}
-                                    </div>
-
-                                    <div className='flex gap-2'>
-                                        {projects[1].technologies.map((element, i)=>{
-                                            return(
-                                                <img key={i+1} src={element} className='md:w-8'/>
-                                            );
-                                        })}
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        ) : (
                             <div className="col-span-6 row-span-5 bg-indigo-100 rounded-3xl flex flex-col gap-4 lg:px-16 justify-center xl:px-16">
                                 <h2 className='font-mosk700 md:text-xl lg:text-xl xl:text-3xl flex justify-center'>{projects[1].name}</h2>
 
@@ -90,13 +45,35 @@ export const BentoGrid = ({projects}) =>{
                                     </div>
 
                                 </div>
-                                
+                            </div>
+                            
 
-                                
+                        ) : (
+                            <div className="col-span-6 row-span-5 bg-indigo-100 rounded-3xl flex gap-4 flex-col  p-10 justify-center xl:px-16">
+                                <div className='flex items-center justify-between'>
+                                    <h2 className='font-mosk700 md:text-xl lg:text-xl xl:text-3xl'>{projects[1].name}</h2>
+                                    <img className=' md:max-h-24 md:max-w-40 lg:max-h-24 lg:max-w-24 rounded-2xl' src={projects[1].logo} alt="Logo project 1" />
+                                </div>
 
-                                
+                                <p className='md:font-mosk400 lg:font-mosk500 md:text-base lg:text-base text-justify '>{projects[1].description}</p>
 
-                                
+                                <div className='flex justify-between'>
+                                    
+                                    <div className='flex items-center gap-2'>
+                                        <FontAwesomeIcon className='md:text-3xl cursor-pointer' icon={faGithub} onClick={()=>window.open(projects[1].repository,"_blank")} />
+
+                                        {projects[1].demo && <FontAwesomeIcon className='md:text-3xl cursor-pointer' icon={faEye} onClick={()=>window.open(projects[1].demo,"_blank")} />}
+                                    </div>
+
+                                    <div className='flex gap-2'>
+                                        {projects[1].technologies.map((element, i)=>{
+                                            return(
+                                                <img key={i+1} src={element} className='md:w-8'/>
+                                            );
+                                        })}
+
+                                    </div>
+                                </div>
                             </div>
                         )}
                         
@@ -215,6 +192,26 @@ export const BentoGrid = ({projects}) =>{
                         </div>
                     </div>
                 </div>
+                
+                
+            ) : (
+                <div className='pt-20 flex flex-col gap-10 px-10 pb-10 items-center'>
+                    {projects.map(({logo, name, description, repository, demo, technologies}, i)=>{
+                    return(
+                        <MobileComponent
+                        key={i+1}
+                        logo={logo}
+                        name={name}
+                        description={description}
+                        repository={repository}
+                        demo={demo}
+                        technologies={technologies}
+                        />
+                    );
+                })}
+
+                </div>
+                
             )}
         </>
         
