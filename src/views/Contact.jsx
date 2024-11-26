@@ -13,7 +13,7 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_ww15t6e666", // Service EmailJS
+        "service_ww15t6e", // Service EmailJS
         "template_fbxfnqx", // Template EmailJS
         form.current,
         "wHo682_zVHWbxSlYl" // Public key EmailJS
